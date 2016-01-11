@@ -1,0 +1,31 @@
+<div>
+  <%= form_for(@activity) do |f| %>
+    <div>
+      <%= f.text_field :title, placeholder: "title" %>
+    </div>
+    <div>
+      <%= f.text_area :memo, placeholder: "memo" %>
+    </div>
+    <div>
+      <%= f.text_field :activity_tag, placeholder: "activity_tag" %>
+    </div>
+    <div>
+      <%= f.text_field :start_time, placeholder: "start_time" %>
+    </div>
+    <div>
+      <%= f.text_field :end_time, placeholder: "end_time" %>
+    </div>
+    <div>
+      <%= f.submit class: 'btn btn-primary withripple', value: '記録' %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <% @activities.each do |activity| %>
+    <div>
+      <ul>
+        <li>title: <%= activity.title %>, start: <%= activity.start_time %>, end: <%= activity.end_time %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

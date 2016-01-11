@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def index
     @activity   = Activity.new
-    @activities = Activity.all
+    @activities = Activity.order('id DESC')
   end
 end

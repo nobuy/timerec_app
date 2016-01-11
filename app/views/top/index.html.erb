@@ -21,11 +21,32 @@
   <% end %>
 </div>
 <div>
-  <% @activities.each do |activity| %>
-    <div>
-      <ul>
-        <li>title: <%= activity.title %>, start: <%= activity.start_time %>, end: <%= activity.end_time %></li>
-      </ul>
-    </div>
-  <% end %>
+  <table>
+    <caption>記録の履歴</caption>
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="" rowspan="" headers="">id</td>
+        <td colspan="" rowspan="" headers="">activity_tag</td>
+        <td colspan="" rowspan="" headers="">title</td>
+        <td colspan="" rowspan="" headers="">start_time</td>
+        <td colspan="" rowspan="" headers="">end_time</td>
+        <td colspan="" rowspan="" headers="">memo</td>
+      </tr>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.id %></td>
+        <td><%= activity.activity_tag %></td>
+        <td><%= activity.title %></td>
+        <td><%= activity.start_time %></td>
+        <td><%= activity.end_time %></td>
+        <td><%= activity.memo %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>

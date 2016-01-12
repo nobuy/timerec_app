@@ -16,7 +16,9 @@
       <%= f.text_field :end_time, placeholder: "end_time" %>
     </div>
     <div>
-      <%= f.submit class: 'btn btn-primary withripple', value: '記録' %>
+      <ul>
+        <li><%= f.submit class: 'btn btn-primary withripple', value: '送信' %></li>
+      </ul>
     </div>
   <% end %>
 </div>
@@ -30,12 +32,12 @@
     </thead>
     <tbody>
       <tr>
-        <td colspan="" rowspan="" headers="">id</td>
-        <td colspan="" rowspan="" headers="">activity_tag</td>
-        <td colspan="" rowspan="" headers="">title</td>
-        <td colspan="" rowspan="" headers="">start_time</td>
-        <td colspan="" rowspan="" headers="">end_time</td>
-        <td colspan="" rowspan="" headers="">memo</td>
+        <td>id</td>
+        <td>activity_tag</td>
+        <td>title</td>
+        <td>start_time</td>
+        <td>end_time</td>
+        <td>memo</td>
       </tr>
     <% @activities.each do |activity| %>
       <tr>

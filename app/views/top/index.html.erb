@@ -1,45 +1,50 @@
 <div>
-  <%= form_for(@activity) do |f| %>
+  <div>
     <div>
-      <%= f.text_field :title, placeholder: "title" %>
+      <%= form_for(@activity) do |f| %>
+        <div>
+          <%= f.text_field :title, placeholder: "title" %>
+        </div>
+        <div>
+          <%= f.text_area :memo, placeholder: "memo" %>
+        </div>
+        <div>
+          <%= f.text_field :activity_tag, placeholder: "activity_tag" %>
+        </div>
+        <div>
+          <%= f.text_field :start_time, placeholder: "start_time" %>
+        </div>
+        <div>
+          <%= f.text_field :end_time, placeholder: "end_time" %>
+        </div>
+        <div>
+          <ul>
+            <li><%= f.submit class: 'btn btn-primary withripple', value: '送信' %></li>
+          </ul>
+        </div>
+      <% end %>
     </div>
-    <div>
-      <%= f.text_area :memo, placeholder: "memo" %>
-    </div>
-    <div>
-      <%= f.text_field :activity_tag, placeholder: "activity_tag" %>
-    </div>
-    <div>
-      <%= f.text_field :start_time, placeholder: "start_time" %>
-    </div>
-    <div>
-      <%= f.text_field :end_time, placeholder: "end_time" %>
-    </div>
-    <div>
-      <ul>
-        <li><%= f.submit class: 'btn btn-primary withripple', value: '送信' %></li>
-      </ul>
-    </div>
-  <% end %>
+  </div>
 </div>
 <div>
-  <table>
-    <caption>記録の履歴</caption>
-    <thead>
-      <tr>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>id</td>
-        <td>activity_tag</td>
-        <td>title</td>
-        <td>start_time</td>
-        <td>end_time</td>
-        <td>memo</td>
-      </tr>
-      <%= render partial: "activity", collection: @activities %>
-    </tbody>
-  </table>
+  <div>
+    <div>
+      <table class="table table-bordered table-hover">
+        <caption>記録の履歴</caption>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>activity_tag</th>
+            <th>title</th>
+            <th>start_time</th>
+            <th>end_time</th>
+            <th>memo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "activity", collection: @activities %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

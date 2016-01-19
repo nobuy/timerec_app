@@ -1,0 +1,4 @@
+$("#activity_title").val("");
+var start_time = $("#activity_end_time").val();
+$("#activity_start_time").val(start_time);
+$("tbody").html("<%= j(render partial: "activity", collection: @activities) %>");

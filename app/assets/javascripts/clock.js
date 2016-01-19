@@ -1,12 +1,12 @@
 window.addEventListener('load', function(){
   'use strict'
 
-  var nowtime = document.querySelector("div#clockText");
+  var nowtime = document.querySelector("input#activity_end_time");
 
   updateClock();
   function updateClock(){
     setTimeout(function(){
-      nowtime.innerHTML = getDateTime("Y-m-d H:i:s");
+      nowtime.value = getDateTime("Y-m-d H:i:s");
       updateClock();
     }, 10);
   }

@@ -1,7 +1,11 @@
 class ActivitiesController < ApplicationController
+  def index
+    @activity   = Activity.new
+    @activities = Activity.order('id DESC')
+  end
   def create
     @activity = Activity.create(create_params)
-    redirect_to :root
+    @activities = Activity.order('id DESC')
   end
 
   private

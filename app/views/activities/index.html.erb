@@ -1,0 +1,42 @@
+<div>
+  <div>
+    <div align="left">
+      <ul class="list-inline">
+        <li><button id="refresh" class="btn btn-primary withripple">refresh</button></li>
+        <li><div id="timerText">0</div></li>
+      </ul>
+    </div>
+    <div>
+      <%= form_for @activity, remote: true do |f| %>
+        <%= f.text_field :title, placeholder: "title" %>
+        <!-- <%= f.text_field :activity_tag, placeholder: "activity_tag" %> -->
+        <%= f.text_field :start_time, placeholder: "start_time" %>
+        <%= f.text_field :end_time, placeholder: "end_time" %>
+        <!-- <%= f.text_area :memo, placeholder: "memo" %> -->
+        <%= f.submit class: 'btn btn-primary withripple', value: 'send' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div class="panel panel-default">
+      <div class="panel-heading">history</div>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>title</th>
+            <!-- <th>description</th> -->
+            <!-- <th>activity_tag</th> -->
+            <th>start</th>
+            <th>end</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "activity", collection: @activities %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

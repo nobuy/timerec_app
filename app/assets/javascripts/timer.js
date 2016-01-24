@@ -5,28 +5,24 @@ window.addEventListener("load", function(){
   var timerId;
   var elapsedTime = 0;
 
-  var refreshbtn = document.querySelector("button#refresh");
-  var sendbtn = document.querySelector("input[name=commit]");
+  var btn = document.querySelector("input[name=commit]");
   var timerText = document.querySelector("div#timerText");
   var starttime = document.querySelector("input#activity_start_time");
+  var endtime   = document.querySelector("input#activity_end_time");
+  starttime.value = getDateTime("Y-m-d H:i:s");
 
   refresh();
-
-  refreshbtn.addEventListener('click', function(){
-    refresh();
-  });
-  sendbtn.addEventListener('click', function(){
+  btn.addEventListener('click', function(){
     refresh();
   });
 
   function refresh(){
     resetTrigger();
-    starttime.value = getDateTime("Y-m-d H:i:s");
     startTrigger();
   }
   function startTrigger(){
     startTime = Date.now();
-    updateTimerText();
+    updateTimer();
   }
   function stopTrigger(){
     elapsedTime += Date.now() - startTime;
@@ -36,11 +32,12 @@ window.addEventListener("load", function(){
     timerText.innerHTML = '0'
     elapsedTime = 0;
   }
-  function updateTimerText(){
+  function updateTimer(){
     timerId = setTimeout(function(){
       var t = Date.now() - startTime + elapsedTime;
       timerText.innerHTML = (t / 1000).toFixed(2);
-      updateTimerText();
+      endtime.value = getDateTime("Y-m-d H:i:s");
+      updateTimer();
     }, 10);
   }
 })

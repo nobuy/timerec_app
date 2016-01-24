@@ -4,10 +4,9 @@
       <%= form_for @activity, remote: true do |f| %>
         <%= f.text_field :title, placeholder: "title" %>
         <!-- <%= f.text_field :activity_tag, placeholder: "activity_tag" %> -->
-        <%= f.text_field :start_time, placeholder: "start_time" %>
+        <%= f.hidden_field :start_time, placeholder: "start_time" %>
         <%= f.hidden_field :end_time, placeholder: "end_time" %>
         <!-- <%= f.text_area :memo, placeholder: "memo" %> -->
-        <button id="refresh" class="btn btn-primary withripple">refresh</button>
         <%= f.submit class: 'btn btn-primary withripple', value: 'send' %>
         <div id="timerText">0</div>
       <% end %>

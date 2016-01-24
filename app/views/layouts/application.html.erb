@@ -29,10 +29,10 @@
       function scroll() {
         if ($(window).scrollTop() >= origOffsetY) {
           $("#menu").addClass("navbar-fixed-top");
-          $("#text").addClass("menu-padding");
+          $("#contents").addClass("menu-padding");
         } else {
           $("#menu").removeClass("navbar-fixed-top");
-          $("#text").removeClass("menu-padding");
+          $("#contents").removeClass("menu-padding");
         }
       }
       document.onscroll = scroll;
@@ -76,7 +76,7 @@
       </div><!-- /.container-fluid -->
     </nav>
   </div>
-  <div id="text" class="container">
+  <div id="contents" class="container">
     <div class="row">
       <div class="col-xs-12">
         <%= yield %>

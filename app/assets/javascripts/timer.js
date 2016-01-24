@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
   var timerText = document.querySelector("div#timerText");
   var starttime = document.querySelector("input#activity_start_time");
   var endtime   = document.querySelector("input#activity_end_time");
-  starttime.value = getDateTime("Y-m-d H:i:s");
+  starttime.value = getDateTimeUTC("Y-m-d H:i:s");
 
   refresh();
   btn.addEventListener('click', function(){
@@ -36,7 +36,7 @@ window.addEventListener("load", function(){
     timerId = setTimeout(function(){
       var t = Date.now() - startTime + elapsedTime;
       timerText.innerHTML = (t / 1000).toFixed(2);
-      endtime.value = getDateTime("Y-m-d H:i:s");
+      endtime.value = getDateTimeUTC("Y-m-d H:i:s");
       updateTimer();
     }, 10);
   }

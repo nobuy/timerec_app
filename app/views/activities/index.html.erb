@@ -2,7 +2,7 @@
   <div>
     <div>
       <%= form_for @activity, remote: true do |f| %>
-        <%= f.text_field :title, placeholder: "title" %>
+        <%= f.text_field :title, placeholder: "title", class: 'col-xs-4 col-ms-4 col-md-4 col-lg-4' %>
         <!-- <%= f.text_field :activity_tag, placeholder: "activity_tag" %> -->
         <%= f.hidden_field :start_time, placeholder: "start_time" %>
         <%= f.hidden_field :end_time, placeholder: "end_time" %>
@@ -20,12 +20,12 @@
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
-            <th>#</th>
-            <th>title</th>
+            <th class="col-xs-1 col-ms-1 col-md-1 col-lg-1">#</th>
+            <th class="col-xs-4 col-ms-4 col-md-4 col-lg-4">title</th>
             <!-- <th>description</th> -->
             <!-- <th>activity_tag</th> -->
-            <th>start</th>
-            <th>end</th>
+            <th class="col-xs-3 col-ms-3 col-md-3 col-lg-3">start</th>
+            <th class="col-xs-3 col-ms-3 col-md-3 col-lg-3">end</th>
           </tr>
         </thead>
         <tbody>

@@ -3,6 +3,6 @@
   <td><%= activity.title %></td>
   <!-- <td><%= activity.memo %></td> -->
   <!-- <td><%= activity.activity_tag %></td> -->
-  <td><%= activity.start_time %></td>
-  <td><%= activity.end_time %></td>
+  <td><%= activity.start_time.in_time_zone('Asia/Tokyo').strftime("%F %H:%M:%S") %></td>
+  <td><%= activity.end_time.in_time_zone('Asia/Tokyo').strftime("%F %H:%M:%S") %></td>
 </tr>
